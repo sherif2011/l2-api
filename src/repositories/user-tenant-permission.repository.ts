@@ -2,7 +2,7 @@ import {Getter, inject} from '@loopback/core';
 import {BelongsToAccessor, repository} from '@loopback/repository';
 import {AuthenticationBindings} from 'loopback4-authentication';
 
-import {PgdbDataSource} from '../datasources';
+import {SqldbDataSource} from '../datasources';
 import {
   UserTenant,
   UserTenantPermission,
@@ -22,7 +22,7 @@ export class UserTenantPermissionRepository extends DefaultUserModifyCrudReposit
     typeof UserTenantPermission.prototype.id
   >;
   constructor(
-    @inject('datasources.pgdb') dataSource: PgdbDataSource,
+    @inject('datasources.sqldb') dataSource: SqldbDataSource,
     @repository.getter(UserTenantRepository)
     utRepositoryGetter: Getter<UserTenantRepository>,
     @inject.getter(AuthenticationBindings.CURRENT_USER)

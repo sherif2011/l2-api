@@ -3,7 +3,7 @@ import {SoftCrudRepository} from 'loopback4-soft-delete';
 import {UserModifiableEntity} from '../models';
 import {DataObject, Getter, Where, Count} from '@loopback/repository';
 import {Options} from 'loopback-datasource-juggler';
-import {PgdbDataSource} from '../datasources';
+import {SqldbDataSource} from '../datasources';
 import {AuthUser} from '../modules/auth';
 import {HttpErrors} from '@loopback/rest';
 import {AuthErrorKeys} from 'loopback4-authentication';
@@ -17,7 +17,7 @@ export abstract class DefaultUserModifyCrudRepository<
     entityClass: typeof UserModifiableEntity & {
       prototype: T;
     },
-    dataSource: PgdbDataSource,
+    dataSource: SqldbDataSource,
     protected readonly getCurrentUser: Getter<AuthUser | undefined>,
   ) {
     super(entityClass, dataSource);

@@ -1,1 +1,1 @@
-DROP TABLE lbstarter.auth_clients;
+DROP TABLE L2ApiSecurity.auth_clients;

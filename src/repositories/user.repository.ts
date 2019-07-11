@@ -9,7 +9,7 @@ import {HttpErrors} from '@loopback/rest';
 import * as bcrypt from 'bcrypt';
 import {AuthenticationBindings, AuthErrorKeys} from 'loopback4-authentication';
 
-import {PgdbDataSource} from '../datasources';
+import {SqldbDataSource} from '../datasources';
 import {User, UserRelations, UserCredentials} from '../models';
 import {AuthUser} from '../modules/auth';
 import {AuthenticateErrorKeys} from '../modules/auth/error-keys';
@@ -26,7 +26,7 @@ export class UserRepository extends DefaultUserModifyCrudRepository<
     typeof User.prototype.id
   >;
   constructor(
-    @inject('datasources.pgdb') dataSource: PgdbDataSource,
+    @inject('datasources.sqldb') dataSource: SqldbDataSource,
     @inject.getter(AuthenticationBindings.CURRENT_USER)
     protected readonly getCurrentUser: Getter<AuthUser | undefined>,
     @repository.getter('UserCredentialsRepository')

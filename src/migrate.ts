@@ -1,10 +1,10 @@
-import {Loopback4StarterApplication} from './application';
+import {L2ApiApplication} from './application';
 
 export async function migrate(args: string[]) {
   const existingSchema = args.includes('--rebuild') ? 'drop' : 'alter';
   console.log('Migrating schemas (%s existing schema)', existingSchema);
 
-  const app = new Loopback4StarterApplication();
+  const app = new L2ApiApplication();
   await app.boot();
   await app.migrateSchema({existingSchema});
 

@@ -1,10 +1,10 @@
-import {Loopback4StarterApplication} from './application';
+import {L2ApiApplication} from './application';
 import {ApplicationConfig} from '@loopback/core';
 
-export {Loopback4StarterApplication};
+export {L2ApiApplication};
 
 export async function main(options: ApplicationConfig = {}) {
-  const app = new Loopback4StarterApplication(options);
+  const app = new L2ApiApplication(options);
   await app.boot();
   await app.start();
 

@@ -1,7 +1,7 @@
 {
   "defaultEnv": "local",
   "local": {
-    "driver": "pg",
+    "driver": "mssql",
     "host": {
       "ENV": "DB_HOST"
     },

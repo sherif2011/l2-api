@@ -1,0 +1,9 @@
+{
+  "name": "sqldb",
+  "connector": "mssql",
+  "host": "sdsdrms",
+  "port": 1433,
+  "user": "smankarious",
+  "password": "XXXXXXXXX",
+  "database": "L2ApiSecurity"
+}
